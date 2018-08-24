@@ -14,7 +14,7 @@ node ('master'){
   
   stage 'Package Image'
   //Packaging the image into a Docker image
-  def pkg = docker.build ('ci-cd-pipeline/game-of-life', '.')
+  def pkg = docker.build ('nidhinnru/ci-cd-pipeline', '.')
 
   
   stage 'Push Image to DockerHub'
