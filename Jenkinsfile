@@ -26,7 +26,7 @@ node ('master'){
   
   stage 'Stage image'
   //Deploy image to staging in ECS
-  def buildenv = docker.image('cloudbees/java-build-tools:0.0.7.1')
+  def buildenv = docker.image('nidhinnru/ci-cd-pipeline')
   buildenv.inside {
     wrap([$class: 'AmazonAwsCliBuildWrapper', credentialsId: 'awskeys', defaultRegion: 'us-east-1']) {
         sh "aws ecs update-service --service staging-game  --cluster staging --desired-count 0"
