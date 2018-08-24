@@ -1,5 +1,5 @@
 //Picking a build agent labeled "ec2" to run pipeline on
-node ('ec2'){
+//node ('ec2'){
   stage 'Pull from SCM'  
   //Passing the pipeline the ID of my GitHub credentials and specifying the repo for my app
   //git credentialsId: '32f2c3c2-c19e-431a-b421-a4376fce1186', url: 'https://github.com/lavaliere/game-of-life.git'
@@ -109,4 +109,4 @@ node ('ec2'){
         echo "gameoflife#${env.BUILD_NUMBER} SUCCESSFULLY deployed to http://52.2.6.47:80"
     }
   }
-}
+//}
