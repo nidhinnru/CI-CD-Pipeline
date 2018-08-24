@@ -105,5 +105,5 @@ node ('master'){
         }
         echo "gameoflife#${env.BUILD_NUMBER} SUCCESSFULLY deployed to http://52.2.6.47:80"
     }
-  }
+  
 }
