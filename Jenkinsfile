@@ -19,7 +19,7 @@ node ('master'){
   
   stage 'Push Image to DockerHub'
   //Pushing the packaged app in image into DockerHub
-  docker.withRegistry ('https://index.docker.io/v1/', 'nidhinnru') {
+  docker.withRegistry ('https://index.docker.io/v1/', 'dockerpass') {
       sh 'ls -lart' 
       pkg.push 'docker-demo'
   }
