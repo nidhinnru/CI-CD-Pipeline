@@ -3,7 +3,7 @@ node ('master'){
   stage 'Pull from SCM'  
   //Passing the pipeline the ID of my GitHub credentials and specifying the repo for my app
   //git credentialsId: '32f2c3c2-c19e-431a-b421-a4376fce1186', url: 'https://github.com/lavaliere/game-of-life.git'
-  git credentialsId: 'privatekey', url: 'https://github.com/nidhinnru/ci-cd-Pipeline.git'
+  git credentialsId: 'privatekey', url: 'https://github.com/nidhinnru/ci-cd-pipeline.git'
   stage 'Test Code'  
   sh 'mvn install'
 
@@ -14,7 +14,7 @@ node ('master'){
   
   stage 'Package Image'
   //Packaging the image into a Docker image
-  def pkg = docker.build ('ci-cd-Pipeline/game-of-life', '.')
+  def pkg = docker.build ('ci-cd-pipeline/game-of-life', '.')
 
   
   stage 'Push Image to DockerHub'
