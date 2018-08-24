@@ -26,6 +26,7 @@ node ('master'){
   
   stage 'Stage image'
   //Deploy image to staging in ECS
+        sh "aws configure set region us-east-1"
         sh "aws ecs update-service --service staging-game  --cluster staging --desired-count 0"
         timeout(time: 5, unit: 'MINUTES') {
             waitUntil {
